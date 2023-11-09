@@ -1,0 +1,474 @@
+x_farming schematic tables
+==============================
+
+-- Mapgen Kiwi tree
+
+local L = {name = "x_farming:kiwi_leaves", prob = 191}
+local N = {name = "x_farming:kiwi_leaves", prob = 223}
+local M = {name = "x_farming:kiwi_leaves", prob = 255}
+local F = {name = "x_farming:kiwi", prob = 127}
+local Y = {name = "x_farming:kiwi_tree", prob = 255, force_place = true}
+
+mts_save("x_farming_kiwi_tree", {
+	size = {x = 5, y = 5, z = 5},
+	data = {
+		_, _, _, _, _,
+		_, _, _, _, _,
+		L, M, N, M, L,
+		_, _, _, _, _,
+		_, _, _, _, _,
+
+		_, _, _, _, _,
+		_, _, _, _, _,
+		M, F, M, F, M,
+		_, M, L, M, _,
+		_, _, _, _, _,
+
+		_, _, Y, _, _,
+		_, _, Y, _, _,
+		N, M, Y, M, N,
+		_, L, M, L, _,
+		_, _, L, _, _,
+
+		_, _, _, _, _,
+		_, _, _, _, _,
+		M, F, M, F, M,
+		_, M, L, M, _,
+		_, _, _, _, _,
+
+		_, _, _, _, _,
+		_, _, _, _, _,
+		L, M, N, M, L,
+		_, _, _, _, _,
+		_, _, _, _, _,
+	}
+})
+
+-- Kiwi tree from sapling
+
+mts_save("x_farming_kiwi_tree_from_sapling", {
+	size = {x = 5, y = 4, z = 5},
+	data = {
+		_, _, _, _, _,
+		L, M, N, M, L,
+		_, _, _, _, _,
+		_, _, _, _, _,
+
+		_, _, _, _, _,
+		M, F, M, F, M,
+		_, M, L, M, _,
+		_, _, _, _, _,
+
+		_, _, Y, _, _,
+		N, M, Y, M, N,
+		_, L, M, L, _,
+		_, _, L, _, _,
+
+		_, _, _, _, _,
+		M, F, M, F, M,
+		_, M, L, M, _,
+		_, _, _, _, _,
+
+		_, _, _, _, _,
+		L, M, N, M, L,
+		_, _, _, _, _,
+		_, _, _, _, _,
+	}
+})
+
+
+-- Mapgen Large cactus with Fruit
+
+local C = {name = "x_farming:cactus", prob = 255, param2 = 20}
+local R = {name = "x_farming:cactus", prob = 255, param2 = 20, force_place = true}
+local E = {name = "x_farming:cactus", prob = 127, param2 = 20}
+local FR = {name = "x_farming:cactus_fruit", prob = 170, param2 = 20}
+
+mts_save("x_farming_large_cactus", {
+	size = {x = 7, y = 7, z = 1},
+	data = {
+		_, _, _, R, _, _, _,
+		_, _, _, C, _, _, _,
+		C, C, C, C, C, C, C,
+		C, FR, FR, C, FR, FR, C,
+		E, _, _, C, _, _, E,
+		_, _, _, C, _, _, _,
+		_, _, _, FR, _, _, _,
+	},
+})
+
+-- Large cactus with Fruit from Seedling
+
+mts_save("x_farming_large_cactus_from_seedling", {
+	size = {x = 7, y = 6, z = 1},
+	data = {
+		_, _, _, R, _, _, _,
+		C, C, C, C, C, C, C,
+		C, FR, FR, C, FR, FR, C,
+		E, _, _, C, _, _, E,
+		_, _, _, C, _, _, _,
+		_, _, _, FR, _, _, _,
+	},
+})
+
+-- Mapgen Jungle tree
+
+local L = {name = "x_farming:jungle_leaves", prob = 255}
+local N = {name = "x_farming:jungle_leaves", prob = 223}
+local M = {name = "x_farming:jungle_leaves", prob = 191}
+local B = {name = "x_farming:jungle_tree", prob = 255, force_place = true}
+local Y = {name = "x_farming:jungle_tree", prob = 191, force_place = true}
+local U = {name = "x_farming:jungle_tree", prob = 127, force_place = true}
+local I = {name = "x_farming:jungle_tree", prob = 255}
+local F1 = {name = "x_farming:cocoa_3", prob = 64, param2=0}
+local F3 = {name = "x_farming:cocoa_3", prob = 64, param2=3}
+local F4 = {name = "x_farming:cocoa_3", prob = 64, param2=2}
+
+mts_save("x_farming_jungle_tree_with_cocoa", {
+	size = {x = 5, y = 17, z = 5},
+	data = {
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		N, L, N, _, _,
+		_, _, N, L, N,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		M, N, N, N, M,
+		M, N, N, N, M,
+		_, _, _, _, _,
+
+		_, _, B, _, _,
+		_, _, B, _, _,
+		_, _, U, _, _,
+		_, _, F1, _, _,
+		_, _, F1, _, _,
+		_, _, F1, _, _,
+		_, _, F1, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		L, B, L, _, _,
+		_, _, L, B, L,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		N, Y, L, Y, N,
+		N, L, L, L, N,
+		_, N, N, N, _,
+
+		_, B, B, B, _,
+		_, B, B, B, _,
+		_, U, B, U, _,
+		_, _, B, F3, _,
+		_, _, B, F3, _,
+		_, _, B, F3, _,
+		_, _, B, F3, _,
+		_, _, B, _, _,
+		_, _, B, L, N,
+		N, L, B, _, _,
+		N, L, B, _, _,
+		_, _, B, L, N,
+		_, _, B, _, _,
+		_, _, B, _, _,
+		N, L, L, L, N,
+		N, L, L, L, N,
+		_, N, L, N, _,
+
+		_, _, B, _, _,
+		_, _, B, _, _,
+		_, _, U, _, _,
+		_, _, F4, _, _,
+		_, _, F4, _, _,
+		_, _, F4, _, _,
+		_, _, F4, _, _,
+		_, _, _, _, _,
+		_, _, L, B, L,
+		L, B, L, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		N, Y, L, Y, N,
+		N, L, L, L, N,
+		_, N, N, N, _,
+
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, N, L, N,
+		N, L, N, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		M, N, N, N, M,
+		M, N, N, N, M,
+		_, _, _, _, _,
+	},
+	yslice_prob = {
+		{ypos=8, prob=127},
+		{ypos=9, prob=127},
+		{ypos=10, prob=127},
+		{ypos=11, prob=127},
+	},
+})
+
+-- Jungle tree with Cocoa from sapling
+
+local B = {name = "x_farming:jungle_tree", prob = 255}
+local C = {name = "x_farming:jungle_tree", prob = 255, force_place = true}
+local Y = {name = "x_farming:jungle_tree", prob = 191}
+local U = {name = "x_farming:jungle_tree", prob = 127}
+
+
+mts_save("x_farming_jungle_tree_with_cocoa_from_sapling", {
+	size = {x = 5, y = 17, z = 5},
+	data = {
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		N, L, N, _, _,
+		_, _, N, L, N,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		M, N, N, N, M,
+		M, N, N, N, M,
+		_, _, _, _, _,
+
+		_, _, B, _, _,
+		_, _, B, _, _,
+		_, _, U, _, _,
+		_, _, F1, _, _,
+		_, _, F1, _, _,
+		_, _, F1, _, _,
+		_, _, F1, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		L, B, L, _, _,
+		_, _, L, B, L,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		N, Y, L, Y, N,
+		N, L, L, L, N,
+		_, N, N, N, _,
+
+		_, B, B, B, _,
+		_, B, C, B, _,
+		_, U, B, U, _,
+		_, _, B, F3, _,
+		_, _, B, F3, _,
+		_, _, B, F3, _,
+		_, _, B, F3, _,
+		_, _, B, _, _,
+		_, _, B, L, N,
+		N, L, B, _, _,
+		N, L, B, _, _,
+		_, _, B, L, N,
+		_, _, B, _, _,
+		_, _, B, _, _,
+		N, L, L, L, N,
+		N, L, L, L, N,
+		_, N, L, N, _,
+
+		_, _, B, _, _,
+		_, _, B, _, _,
+		_, _, U, _, _,
+		_, _, F4, _, _,
+		_, _, F4, _, _,
+		_, _, F4, _, _,
+		_, _, F4, _, _,
+		_, _, _, _, _,
+		_, _, L, B, L,
+		L, B, L, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		N, Y, L, Y, N,
+		N, L, L, L, N,
+		_, N, N, N, _,
+
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, N, L, N,
+		N, L, N, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		M, N, N, N, M,
+		M, N, N, N, M,
+		_, _, _, _, _,
+	},
+	yslice_prob = {
+		{ypos = 8, prob = 127},
+		{ypos = 9, prob = 127},
+		{ypos = 10, prob = 127},
+		{ypos = 11, prob = 127},
+	},
+})
+
+-- Mapgen Pine tree
+
+local L = {name = "x_farming:pine_nut_leaves", prob = 255}
+local M = {name = "x_farming:pine_nut_leaves", prob = 223}
+local N = {name = "x_farming:pine_nut_leaves", prob = 191}
+local T = {name = "x_farming:pine_nut_tree", prob = 255, force_place = true}
+local B = {name = "x_farming:pine_nut_tree", prob = 255}
+local FR = {name = "x_farming:pine_nut", prob = 64}
+local S = {name = "default:snow", prob = 127}
+
+mts_save("x_farming_pine_nut_tree", {
+	size = {x = 5, y = 8, z = 5},
+	data = {
+		_, _, _, _, _,
+		_, FR, FR, FR, _,
+		_, L, L, L, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+
+		_, _, _, _, _,
+		FR, _, _, _, FR,
+		L, L, L, L, L,
+		_, FR, L, FR, _,
+		_, L, L, L, _,
+		_, _, L, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+
+		_, _, T, _, _,
+		FR, _, T, _, FR,
+		L, L, T, L, L,
+		_, L, T, L, _,
+		_, L, T, L, _,
+		_, L, T, L, _,
+		_, _, L, _, _,
+		_, _, N, _, _,
+
+		_, _, _, _, _,
+		FR, _, _, _, FR,
+		L, L, L, L, L,
+		_, FR, L, FR, _,
+		_, L, L, L, _,
+		_, _, L, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+
+		_, _, _, _, _,
+		_, FR, FR, FR, _,
+		_, L, L, L, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+	}
+})
+
+mts_save("x_farming_pine_nut_tree_from_sapling", {
+	size = {x = 5, y = 7, z = 5},
+	data = {
+		_, FR, FR, FR, _,
+		_, L, L, L, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+
+		FR, _, _, _, FR,
+		L, L, L, L, L,
+		_, FR, L, FR, _,
+		_, L, L, L, _,
+		_, _, L, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+
+		FR, _, T, _, FR,
+		L, L, T, L, L,
+		_, L, T, L, _,
+		_, L, T, L, _,
+		_, L, T, L, _,
+		_, _, L, _, _,
+		_, _, N, _, _,
+
+		FR, _, _, _, FR,
+		L, L, L, L, L,
+		_, FR, L, FR, _,
+		_, L, L, L, _,
+		_, _, L, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+
+		_, FR, FR, FR, _,
+		_, L, L, L, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+		_, _, _, _, _,
+	}
+})
+
+-- Salt
+
+mts_save("x_farming_salt_decor", {
+	size = {x = 1, y = 3, z = 1},
+	data = {
+		{name = "default:dirt", prob = 255, force_place = true},
+		{name = "default:dirt", prob = 255, force_place = true},
+		{name = "x_farming:salt_7", prob = 255},
+	}
+})
+
+-- Mapgen Ice Fishing
+
+local L = {name = "default:ice", prob = 255}
+local M = {name = "x_farming:icefishing_9", prob = 255}
+local N = {name = "default:ice", prob = 127}
+
+mts_save("x_farming_icefishing", {
+	size = {x = 3, y = 3, z = 3},
+	data = {
+		N, N, N,
+		_, _, _,
+		_, _, _,
+
+		N, L, N,
+		_, M, _,
+		_, _, _,
+
+		N, N, N,
+		_, _, _,
+		_, _, _,
+	}
+})

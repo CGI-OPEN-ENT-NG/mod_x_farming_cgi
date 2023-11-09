@@ -1,0 +1,34 @@
+{
+    "name": "x_farming",
+    "version": "1.0.0",
+    "description": "Adds bow and arrows to Minetest.",
+    "main": "index.js",
+    "type": "module",
+    "directories": {
+        "doc": "docs"
+    },
+    "engines": {
+        "node": ">=16.0.0",
+        "npm": ">=8.0.0"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "push:ci": "node ./scripts/deploy",
+        "lua-diagnostics": "node ./scripts/lls-check"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://juraj_vajda@bitbucket.org/minetest_gamers/x_farming.git"
+    },
+    "author": "SaKeL",
+    "license": "LGPL-2.1-or-later",
+    "bugs": {
+        "url": "https://bitbucket.org/minetest_gamers/x_farming/issues"
+    },
+    "homepage": "https://bitbucket.org/minetest_gamers/x_farming#readme",
+    "devDependencies": {
+        "jaguar": "^6.0.1",
+        "node-fetch": "^3.2.10",
+        "yargs": "^17.6.1"
+    }
+}
